@@ -49,6 +49,7 @@
             margin-top: 20px;
             text-decoration: none;
             color: #007bff;
+            float: right;
         }
 
         .search-container {
@@ -115,6 +116,45 @@
             font-size: 20px;
             color: red;
         }
+        .btn-edit {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .btn-edit:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-delete {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #eb2525;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+        .btn-delete:hover {
+            background-color: #d81d1d;
+        }
+
+        .btn-details {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #4cc63e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+        .btn-details:hover {
+            background-color: #45b538;
+        }
 
 
     </style>
@@ -127,19 +167,20 @@
             type="text"
             id="searchInput"
             placeholder="Search by name, email, or course..."
-            onkeyup="searchStudents()"
-    >
+            onkeyup="searchStudents()">
+    <a href="/students/add-students" class="back-link">+ Add New Student</a>
 </div>
+
 
 <table id="studentsTable">
     <thead>
     <tr>
-        <th onclick="sortTable(0)">Student ID </th>
-        <th onclick="sortTable(1)">Name </th>
-        <th onclick="sortTable(2)">Email </th>
-        <th onclick="sortTable(3)">Status </th>
-        <th onclick="sortTable(4)">Course ID </th>
-        <th onclick="sortTable(5)">Course Name </th>
+        <th onclick="sortTable(0)">Student ID &nbsp;&#8597;</th>
+        <th onclick="sortTable(1)">Name &nbsp;&#8597;</th>
+        <th onclick="sortTable(2)">Email &nbsp;&#8597;</th>
+        <th onclick="sortTable(3)">Status &nbsp;&#8597;</th>
+        <th onclick="sortTable(4)">Course ID &nbsp;&#8597;</th>
+        <th onclick="sortTable(5)">Course Name &nbsp;&#8597;</th>
         <th>Action</th>
     </tr>
     </thead>
@@ -167,9 +208,9 @@
                 </c:forEach>
             </td>
             <td>
-                <a href="/students/edit-student/${student.studentId}">Edit</a>
-                <a href="/students/delete-student/${student.studentId}">Delete</a>
-                <a href="/students/student-detail/${student.studentId}">Details</a>
+                <a href="/students/edit-student/${student.studentId}" class="btn-edit">Edit</a>
+                <a href="/students/delete-student/${student.studentId}" onclick="alert('Selected student is Deleted')" class="btn-delete">Delete</a>
+                <a href="/students/student-detail/${student.studentId}" class="btn-details">Details</a>
             </td>
         </tr>
     </c:forEach>
@@ -185,7 +226,7 @@
 
 </table>
 
-<a href="/students/add-students" class="back-link">+ Add New Student</a>
+
 
 <div class="pagination-controls">
     <label for="pageSize">Rows per page:</label>
