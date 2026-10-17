@@ -54,6 +54,12 @@ public class CoursesController {
         return "redirect:/course/view-courses";
     }
 
+    @GetMapping("/delete-course/{courseId}")
+    public String deleteCourse(@PathVariable int courseId){
+        coursesRepo.deleteById(courseId);
+        return "redirect:/course/view-courses";
+    }
+
     //POSTMAN
     @RequestMapping("courses")
     @ResponseBody

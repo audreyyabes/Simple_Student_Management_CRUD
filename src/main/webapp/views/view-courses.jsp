@@ -175,9 +175,6 @@
             onkeyup="searchCourses()">
     <a href="/course/add-courses" class="back-link">+ Add New Course</a>
 </div>
-
-<h2>Existing Courses</h2>
-
 <table id="coursesTable">
     <thead>
     <tr>
@@ -193,9 +190,9 @@
             <td>${course.courseId}</td>
             <td>${course.courseName}</td>
             <td>
-                <a href="/course/edit-course/${course.courseId}"> Edit</a>
-                <a href="/course/add-courses"> Delete</a>
-                <a href="/course/add-courses"> View</a>
+                <a href="/course/edit-course/${course.courseId}" class="btn-edit"> Edit</a>
+                <a href="/course/delete-course/${course.courseId}" onclick="alert('Selected student is Deleted')" class="btn-delete"> Delete</a>
+                <a href="/course/courses-detail/${course.courseId}" class="btn-details"> View</a>
             </td>
         </tr>
     </c:forEach>
