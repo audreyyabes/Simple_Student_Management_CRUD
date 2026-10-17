@@ -75,11 +75,17 @@
             <td>Email</td>
             <td>${students.email}</td>
         </tr>
+        <tr>
+            <td>Active</td>
+            <td>${students.is_active ? 'Yes' : 'No'}</td>
+        </tr>
     </table>
     <a href="/students/view-students" class="back-link">BACK</a>
     <a href="/students/edit-student/${students.studentId}" class="back-link-right">Edit Student</a>
 
 </div>
+
+
 
 
 </body>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Student Management - Home</title>
 
-    <style>
+     <style>
         * {
             box-sizing: border-box;
             margin: 0;
@@ -58,7 +58,7 @@
         .card {
             background: white;
             padding: 35px 25px;
-            width: 280px;
+            width: 250px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
             transition: transform 0.2s, box-shadow 0.2s;
@@ -151,8 +151,16 @@
         <div class="card">
             <h3>View Students</h3>
             <p>View and manage the list of registered students.</p>
-            <a href="./students/view-students" class="btn btn-secondary">
+            <a href="/students/view-students" class="btn btn-secondary">
                 View All Students
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>Courses</h3>
+            <p>View and manage the list of available courses</p>
+            <a href="/course/view-courses" class="btn btn-secondary">
+                View All Courses
             </a>
         </div>
 

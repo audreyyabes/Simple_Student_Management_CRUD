@@ -16,6 +16,10 @@
             text-align: center;
             color: #333;
         }
+        h4 {
+            text-align: center;
+            color: #333;
+        }
 
         table {
             width: 100%;
@@ -161,6 +165,7 @@
 </head>
 <body>
 
+<h4><a href="/home">Student management</a></h4>
 <h1>VIEW ALL STUDENTS</h1>
 <div class="search-container">
     <label for="searchInput"></label><input
