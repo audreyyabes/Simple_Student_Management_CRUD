@@ -67,15 +67,10 @@ public class CoursesController {
     }
 
     @GetMapping("/courses-detail/{courseId}")
-    public String viewCourseDetails(
-            @PathVariable int courseId, Model model) {
-
-        Courses course = coursesRepo.findById(courseId)
-                .orElseThrow(() ->
-                        new RuntimeException("Course Not Found"));
-
-        List<Students> students =
-                studentsRepo.findByCourseId(courseId);
+    public String viewCourseDetails(@PathVariable int courseId, Model model) {
+        Courses course = coursesRepo.findById(courseId).orElseThrow(() ->
+                new RuntimeException("Course Not Found"));
+        List<Students> students = studentsRepo.findByCourseId(courseId);
 
         model.addAttribute("course", course);
         model.addAttribute("students", students);
